@@ -1,0 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
+.main{
+width: 100%;
+height: 800px;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+}
+.card-box{
+width: 100%;
+height: 700px;
+
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+padding: 10px;
+
+}
+.card1{
+    width: 500px;
+    height: 600px;
+
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card1 .text{
+  width: 100%;
+  height: 600px;
+  background-color: rgb(40, 64, 85);
+  visibility: hidden;
+  font-family: 'Amatic SC', cursive;
+  font-size: 40px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card1:hover{
+  cursor: pointer;
+}
+.card1:hover .text{
+  visibility: visible;
+} 
+
+@media screen and (max-width: 850px) {
+ 
+  .main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    }
+
+  .card-box{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+  }
+  .card1{
+    width: 100%;
+    height: 300px;
+
+    margin: 10px;
+    display: flex;
+
+}
+.card1 .text{
+  width: 100%;
+  height: 300px;
+  background-color: rgb(40, 64, 85);
+  visibility: hidden;
+}
+
+.card1:hover{
+  cursor: pointer;
+}
+.card1:hover .text{
+  visibility: visible;
+} 
+
+}
