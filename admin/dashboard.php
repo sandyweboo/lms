@@ -61,7 +61,7 @@
       </div>
     </div>
     <?php                  
-     $rs = Database::search("SELECT * from academic");
+     $rs = Database::search("SELECT * from teacher");
      $n = $rs->num_rows;
    ?>
 

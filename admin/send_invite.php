@@ -21,12 +21,12 @@ if(empty($un)){
     echo("enter email");
 }else{
 
-    $rs = Database::search("SELECT * FROM `academic` WHERE `email`='" . $email . "'");
+    $rs = Database::search("SELECT * FROM `teacher` WHERE `email`='" . $email . "'");
     $n = $rs->num_rows;
     if ($n > 0) {
         echo ("user alresy exist");
     } else {
-    Database::iud("INSERT INTO `academic` (`username`,`pwd`,`email`) VALUES ('".$un ."', '".$pwd ."', '" .$email ."')");
+    Database::iud("INSERT INTO `teacher` (`username`,`pwd`,`email`) VALUES ('".$un ."', '".$pwd ."', '" .$email ."')");
 
     $mail = new PHPMailer;
     $mail->IsSMTP();

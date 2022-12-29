@@ -119,7 +119,7 @@ include "navbar.php";
                             <tr>
                             <?php
                   require "Database.php";
-                  $rs = Database::search("SELECT * FROM `academic`");
+                  $rs = Database::search("SELECT * FROM `teacher`");
                   $n = $rs->num_rows;
                   for ($x = 0; $x < $n; $x++) {
                     $d = $rs->fetch_assoc();
