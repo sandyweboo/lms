@@ -103,7 +103,7 @@ function login(){
             if(r.readyState == 4){
                 var t = r.responseText;
                 if(t == "success"){
-                    alert(t);
+                    location.reload();
                 }else{
                     alert(t);
                 }

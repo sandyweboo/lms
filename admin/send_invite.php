@@ -40,8 +40,8 @@ if(empty($un)){
     $mail->addReplyTo('sandyweboo@gmail.com', 'Reset Password');
     $mail->addAddress($email);
     $mail->isHTML(true);
-    $mail->Subject = '<h3 style="color:blue">Sandy learn</h3> Teacher login verification';
-    $bodyContent = '<h1 style="color:green">Your Verification username is '.$un.' </br> '.$pwd.' </br> </h1>';
+    $mail->Subject = 'Sandy learn Teacher login verification';
+    $bodyContent = '<h4 style="color:green">Your Verification username is '.$un.' </br> '.$pwd.' </br> follow this link http://localhost/lms/reg1.php </h4>';
     $mail->Body    = $bodyContent;
 
 

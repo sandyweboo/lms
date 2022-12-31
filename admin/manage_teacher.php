@@ -26,6 +26,8 @@ include "navbar.php";
 
 ?>
 
+
+
         <!-- end nav content-->
         <div class="container d-flex justify-content-center">
             <div class="col-12 shadow-lg p-3 m-4 d-flex justify-content-end">
@@ -109,7 +111,7 @@ include "navbar.php";
                     <table class="table">
                         <thead>
                             <tr>
-                            <th>Id</th>
+                            
                             <th>Teacher Name</th>
                             <th>email</th>
 
@@ -124,7 +126,7 @@ include "navbar.php";
                   for ($x = 0; $x < $n; $x++) {
                     $d = $rs->fetch_assoc();
                   ?>
-                    <td><?php echo $d["id"]; ?></td>
+                    
                     <td><?php echo $d["username"]; ?></td>
                     <td><?php echo $d["email"]; ?></td>
                     </tr>
@@ -158,8 +160,9 @@ include "navbar.php";
 
 
     <script src="js/script.js"></script>
-    <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
     <script src="js/external/jquery/jquery.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script>
