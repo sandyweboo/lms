@@ -11,7 +11,7 @@ if (empty($sub)) {
 
 }else{
 
-    Database::iud("INSERT INTO `subject` (`name`) VALUES ('".$sub."')");
+    Database::iud("INSERT INTO `subject` (`subject_name`) VALUES ('".$sub."')");
 
     echo ("done");
 

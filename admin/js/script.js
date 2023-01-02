@@ -91,11 +91,13 @@ function login(){
         var un = document.getElementById("un");
         var pwd = document.getElementById("pwd");
         var email = document.getElementById("email");
+  
 
         var f = new FormData();
         f.append("un",un.value);
         f.append("pwd",pwd.value);
         f.append("email",email.value);
+   
 
 
         var r = new XMLHttpRequest();
@@ -113,25 +115,34 @@ function login(){
         r.send(f);
     }
 
-    function updateteacher(){
 
-    var email = document.getElementById("email2");
+    function update_teacher(){
 
-    alert(email2.value);
-    // var r = new XMLHttpRequest();
-    // r.onreadystatechange = function () {
-    //     if (r.readyState == 4) {
-    //         var t = r.responseText;
-    //         if (t == "Success") {
-    //             alert("Verification code has sent to your Email. Please check your inbox");
-    //         } else {
-    //             alert(t);
-    //         }
+        var subject = document.getElementById("subject");
+        var email = document.getElementById("email");
 
-    //     }
-    // }
+        // alert(subject.value);
+        // alert(email.value);
 
-    // r.open("GET", "forgotPasswordProcess.php?e=" + email.value, true);
-    // r.send();
+        var f = new FormData();
+        f.append("subject",subject.value);
+        f.append("email",email.value);
+
+
+
+        var r = new XMLHttpRequest();
+        r.onreadystatechange = function(){
+            if(r.readyState == 4){
+                var t = r.responseText;
+                if(t == "success"){
+                    alert("successfuly updated 😉");
+                    location.reload();
+                }else{
+                    alert(t);
+                }
+            }
+        }
+        r.open("POST", "update_teacher_process.php", true);
+        r.send(f);
 
 }

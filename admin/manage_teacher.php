@@ -84,68 +84,74 @@ include "navbar.php";
         </div>
 
 
+
+
+
+
+
+
         <div class="col-12 shadow-lg">
 
             <div id="tabs">
                 <ul class=" p-2">
                     <li class=" shadow-lg rounded-0 border-0 text-light text-center fw-bold"><a
-                            href="#tabs-1">Assigments</a></li>
+                            href="#tabs-1">techer</a></li>
                     <li class=" shadow-lg rounded-0 border-0 text-light text-center fw-bold"><a href="#tabs-2">Lecture
                             notes</a></li>
                     <li class=" shadow-lg rounded-0 border-0 text-light text-center fw-bold"><a
                             href="#tabs-3">results</a></li>
                 </ul>
-                <div id="tabs-1">
+
+                <div class="col-lg-8 col-sm-12 col-md-12" id="tabs-1">
 
                     <input id="myInput" type="text" class="input-group mb-3 col-4" placeholder="Search..">
 
                     <h3>list of teacher</h3>
 
                     <table class="table">
-                <tr>
-              
-      
-            </tr>
-            
-                </table>
+                        <tr>
+
+
+                        </tr>
+
+                    </table>
+
+
                     <table class="table">
                         <thead>
                             <tr>
-                            
-                            <th>Teacher Name</th>
-                            <th>email</th>
-                            <th>subject</th>
-                            <th>assing to subject</th>
 
+                                <th scope="col">First</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Update</th>
                             </tr>
                         </thead>
-                        <tbody id="myTable">
-                            <tr>
+                        <tbody>
                             <?php
-                  require "Database.php";
+                                require "Database.php";
 
-                  $rs = Database::search("SELECT `teacher`.*, subject.name FROM teacher INNER JOIN `subject`  ON teacher.subject_id = subject.subject_id;");
-                  $n = $rs->num_rows;
-                  for ($x = 0; $x < $n; $x++) {
-                    $d = $rs->fetch_assoc();
-                  ?>
-                    
-                    <td><?php echo $d["username"]; ?></td>
-                    <td><?php echo $d["email"]; ?></td>
-                    <td><?php echo $d["name"]; ?></td>
-                    <td id="email2" value="<?php echo $d["email"]; ?>" onclick="updateteacher();">Update</td>
-                
-                    </tr>
-                  <?php
-                  }
-                  ?>
+                                $rs = Database::search("SELECT * FROM teacher ");
+                                $n = $rs->num_rows;
+                                for ($x = 0; $x < $n; $x++) {
+                                    $d = $rs->fetch_assoc();
+                                    ?>
+                            <tr>
+
+                                <td><?php echo $d["username"]; ?></td>
+                                <td><?php echo $d["email"]; ?></td>
+                                <td><a href="update_teacher.php?c=<?php echo $d["email"]; ?>">Update</a> </td>
+
                             </tr>
-
-
+                            <?php
+}
+?>
                         </tbody>
                     </table>
-
                 </div>
+
+
+
+
 
                 <div id="tabs-2">
 
@@ -168,30 +174,28 @@ include "navbar.php";
     <script src="js/script.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/bootstrap.js"></script>
-    
+
     <script src="js/external/jquery/jquery.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script>
-        
-        $("#tabs").tabs();
+    $("#tabs").tabs();
 
-        // $(document).ready(function(){
-        //     $(document).on('click','td[data-role=updateteacher]',function(){
-        //         // alert($(this).data('id')); 
-        //     })
-        // })
-
+    // $(document).ready(function(){
+    //     $(document).on('click','td[data-role=updateteacher]',function(){
+    //         // alert($(this).data('id'));
+    //     })
+    // })
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $("#myInput").on("keyup", function () {
-                var value = $(this).val().toLowerCase();
-                $("#myTable tr").filter(function () {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
+    $(document).ready(function() {
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });
+    });
     </script>
 </body>
 
