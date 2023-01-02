@@ -112,3 +112,26 @@ function login(){
         r.open("POST", "send_invite.php", true);
         r.send(f);
     }
+
+    function updateteacher(){
+
+    var email = document.getElementById("email2");
+
+    alert(email2.value);
+    // var r = new XMLHttpRequest();
+    // r.onreadystatechange = function () {
+    //     if (r.readyState == 4) {
+    //         var t = r.responseText;
+    //         if (t == "Success") {
+    //             alert("Verification code has sent to your Email. Please check your inbox");
+    //         } else {
+    //             alert(t);
+    //         }
+
+    //     }
+    // }
+
+    // r.open("GET", "forgotPasswordProcess.php?e=" + email.value, true);
+    // r.send();
+
+}

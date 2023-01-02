@@ -114,6 +114,8 @@ include "navbar.php";
                             
                             <th>Teacher Name</th>
                             <th>email</th>
+                            <th>subject</th>
+                            <th>assing to subject</th>
 
                             </tr>
                         </thead>
@@ -121,7 +123,8 @@ include "navbar.php";
                             <tr>
                             <?php
                   require "Database.php";
-                  $rs = Database::search("SELECT * FROM `teacher`");
+
+                  $rs = Database::search("SELECT `teacher`.*, subject.name FROM teacher INNER JOIN `subject`  ON teacher.subject_id = subject.subject_id;");
                   $n = $rs->num_rows;
                   for ($x = 0; $x < $n; $x++) {
                     $d = $rs->fetch_assoc();
@@ -129,6 +132,9 @@ include "navbar.php";
                     
                     <td><?php echo $d["username"]; ?></td>
                     <td><?php echo $d["email"]; ?></td>
+                    <td><?php echo $d["name"]; ?></td>
+                    <td id="email2" value="<?php echo $d["email"]; ?>" onclick="updateteacher();">Update</td>
+                
                     </tr>
                   <?php
                   }
@@ -166,7 +172,15 @@ include "navbar.php";
     <script src="js/external/jquery/jquery.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script>
+        
         $("#tabs").tabs();
+
+        // $(document).ready(function(){
+        //     $(document).on('click','td[data-role=updateteacher]',function(){
+        //         // alert($(this).data('id')); 
+        //     })
+        // })
+
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
