@@ -20,7 +20,7 @@ include "session.php";
                 <div class="d-flex align-items-center justify-content-center vh-100 bg-light">
                     <div class="col-lg-4 col-md-8 col-sm-12 shadow p-4">
                     <div class="logo mb-3"></div>
-<h4>please update your profile </h4>
+                <h4>please update your profile </h4>
                  <h5  id="email2"> <?php echo $d["email"];?> </h5> 
                     <div class="mb-3">
                               <label for="exampleInputPassword1" class="form-label">your full name</label>

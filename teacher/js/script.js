@@ -104,3 +104,12 @@ function verifyteacher() {
  rq.open("POST","verfication_process.php", true);
  rq.send(f);
 }
+
+   
+ 
+function uploadass(){
+    window.location = "upload_assigmet.php";  
+}
+function uploadlc(){
+    window.location = "upload_lc.php";  
+}

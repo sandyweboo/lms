@@ -26,7 +26,7 @@
 
      if ($n > 0) {
          echo ("user alredy exist plz login");
-             session_destroy();
+             
      } else {
        
          $code = uniqid();
